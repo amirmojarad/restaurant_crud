@@ -17,8 +17,22 @@ class MenuItemFactory extends Factory
      */
     public function definition(): array
     {
+        $foodNames = [
+            'Pancakes',
+            'Scrambled Eggs',
+            'Burger',
+            'Pizza',
+            'Sushi',
+            'Tacos',
+            'Salad',
+            'Spaghetti',
+            'Ice Cream',
+            'Fried Chicken',
+        ];
+
+
         return [
-            'title' => $this->faker->word(),
+            'title' => $this->faker->randomElement($foodNames),
             'menu_id' => Menu::factory(),
             'waiting_time' => $this->faker->randomElement([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
             'price' =>$this->faker->randomFloat(2, 10, 100),
